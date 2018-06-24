@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/pagination.css">
+    <title>Pagination Plugin</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Pagination Plugin</h1>
+        <div id="amount"></div>
+        <div class="over-prompt" id="placeholer" hidden>后面都没有啦！</div>
+        <div id="tabBar" class="tabbar">
+            <span class="totalpage" id="totalPage">共有？页</span>
+            <button class="firstpage" id="firstPage">首页</button>
+            <button class="prepage" id="previousPage">上一页</button>
+            <div id="pagination" class="paging"></div>
+            <button class="nextpage" id="nextPage">下一页</button>
+            <button class="lastpage" id="lastPage">尾页</button>
+            <span class="currentpage" id="pageNum">第？页</span>
+        </div>
+        <section>
+            <h2>安装</h2>
+            <h3>依赖安装</h3>
+            <pre>&lt;link rel="stylesheet" href="pagination.css">
+<div class="comment">&lt;!--引入pagination.css--></div>
+&lt;script src="src/pagination.js">&lt;/script>
+&lt;script src="src/test.js">&lt;/script>
+<div class="comment">&lt;!--引入pagination.js--></div>
+</pre>
+            <h3>设置根元素</h3>
+            <pre>&lt;div id="tabBar">&lt;/div></pre>
+            <h3>基础用法</h3>
+            <pre>
+init({
+    element: '#selector',<div class="comment">// 选择器</div>
+    amount: (数据量),
+    limit: (每页显示多少条),
+    page: (初始页码),
+    maxPageBtn: (可视按钮的最大个数),
+    onClick: function (page, e) {
+        alert('您当前处理的是第' + page + '页');
+        // searchUsers(keyword, page, limit, onSuccess, onFail);
+    },
+});</pre>
+        </section>
+        <section>
+            <h2>配置</h2>
+            <pre>
+init({
+    amountList: '#amount',<div class="comment">// 选择器</div>
+    placehodler: '#placehodler',<div class="comment">// 选择器</div>
+    tabBar: '#tabBar',<div class="comment">// 选择器</div>
+    pagination: '#pagination',<div class="comment">// 选择器</div>
+    pageNum: '#pageNum',<div class="comment">// 选择器</div>
+    firstPage: '#firstPage',<div class="comment">// 选择器</div>
+    lastPage: '#lastPage',<div class="comment">// 选择器</div>
+    prePage: '#previousPage',<div class="comment">// 选择器</div>
+    nextPage: '#nextPage',<div class="comment">// 选择器</div>
+    pageAmount: '#totalPage',<div class="comment">// 选择器</div>
+    amount: 200,<div class="comment">// 选择器</div>
+    limit: 8,<div class="comment">// 选择器</div>
+    page: 1,<div class="comment">// 选择器</div>
+    maxPageBtn: 9,<div class="comment">// 选择器</div>
+    onClick: function (page, e) {<div class="comment">// 点击回调</div>
+        alert('您当前处理的是第' + page + '页');
+        // searchUsers(keyword, page, limit, onSuccess, onFail);
+    },
+});</pre>
+        </section>
+        <section>
+            <h2>API</h2>
+            <h3>数据处理</h3>
+            <pre>
+getTotalPage() <div class="comment">// 计算总页数</div>
+setPagingBtn() <div class="comment">// 设置页码按钮的始末位置</div>
+clickPagingBtn() <div class="comment">// 渲染按钮，点击页码按钮跳转并做相应的操作</div></pre>
+backToPage() <div class="comment">// 上一页、下一页、首页、尾页</div></pre>
+            <h3>视图操作</h3>
+            <pre>
+btnDisabled() <div class="comment">// 页码是否可用</div></pre>
+        </section>
+    </div>
+</body>
+<script src="src/pagination.js"></script>
+<script src="test/test.js"></script>
+
+</html>
